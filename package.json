@@ -1,0 +1,27 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "git@github.com:Joroze/chat.git",
+  "author": "Joroze",
+  "license": "MIT",
+  "scripts": {
+    "startdev": "NODE_ENV=development nodemon server.js",
+    "start": "server.js"
+  },
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-plugin-import": "2.13.0",
+    "nodemon": "1.18.3"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "cors": "2.8.4",
+    "express": "4.16.3",
+    "geoip-lite": "^1.3.1",
+    "lodash": "4.17.10",
+    "ramda": "0.25.0",
+    "socket.io": "2.1.1"
+  }
+}

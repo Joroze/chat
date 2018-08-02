@@ -62,7 +62,7 @@ module.exports = function socket() {
 
     console.log(`A client has connected. (clientSocket ID: ${clientSocket.id}, IP: ${clientIpAddress})`);
     getLocation(clientIpAddress).then((value) => {
-      console.log(`Connected client's location: ${value}`);
+      console.log(`Connected client's location: ${JSON.stringify(value)}`);
     });
     console.log(`${numberOfClients} currently online.`);
 

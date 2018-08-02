@@ -7,8 +7,8 @@ const R = require('ramda');
 const server = process.env.NODE_ENV === 'development'
   ? require('http').createServer(app)
   : require('https').createServer({
-    privateKey: fs.readFileSync('/etc/letsencrypt/live/chat.backend.joroze.com/privkey.pem', 'utf8'),
-    certificate: fs.readFileSync('/etc/letsencrypt/live/chat.backend.joroze.com/cert.pem', 'utf8'),
+    key: fs.readFileSync('/etc/letsencrypt/live/chat.backend.joroze.com/privkey.pem', 'utf8'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/chat.backend.joroze.com/cert.pem', 'utf8'),
     ca: fs.readFileSync('/etc/letsencrypt/live/chat.backend.joroze.com/chain.pem', 'utf8'),
   }, app);
 

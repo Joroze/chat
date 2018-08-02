@@ -86,13 +86,14 @@ module.exports = function socket() {
     clientSocket.on('user_details', (userId) => {
       if (!clientUser.isAdmin || (clients[userId].isAdmin && userId !== clientUser.id)) {
         clientSocket.emit('message', serverMessage('Unauthorized'));
+        return;
       }
 
       const userToView = clients[userId];
 
       getLocation(userToView.ipAddress)
         .then((value) => {
-          console.log(`Location: ${value}`);
+          console.log(`Location: ${JSON.stringify(value)}`);
           clientSocket.emit('user', { ...userToView, location: value });
         })
         .catch((error) => {
